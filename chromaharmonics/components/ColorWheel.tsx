@@ -363,10 +363,7 @@ const ColorWheel: React.FC<ColorWheelProps> = ({
             borderRadius: '50%',
             backgroundColor: popCss,
             border: `${borderW}px solid rgba(255,255,255,${isBase ? 0.95 : 0.88})`,
-            filter: [
-              `drop-shadow(0px 4px 10px rgba(0,0,0,0.50))`,
-              `drop-shadow(0px 1px 3px rgba(0,0,0,0.30))`,
-            ].join(' '),
+            boxShadow: '0px 4px 10px rgba(0,0,0,0.50), 0px 1px 3px rgba(0,0,0,0.30)',
             cursor: isDraggingThis ? 'grabbing' : 'grab',
             transform: isDraggingThis ? 'scale(1.18)' : 'scale(1)',
             transition: isDraggingThis ? 'none' : 'transform 0.15s ease',
