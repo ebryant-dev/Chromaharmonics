@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Custom scrollbar ─────────────────────────────── */
+::-webkit-scrollbar        { width: 4px; height: 4px; }
+::-webkit-scrollbar-track  { background: transparent; }
+::-webkit-scrollbar-thumb  { background: rgba(255,255,255,0.12); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.22); }
+
+/* ── Range inputs ─────────────────────────────────── */
+input[type='range'] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  width: 100%;
+}
+
+input[type='range']::-webkit-slider-runnable-track {
+  height: 3px;
+  border-radius: 2px;
+  background: rgba(255,255,255,0.1);
+}
+
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #fff;
+  margin-top: -5.5px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.5);
+  transition: transform 0.1s;
+}
+
+input[type='range']::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+
+input[type='range']::-moz-range-track {
+  height: 3px;
+  border-radius: 2px;
+  background: rgba(255,255,255,0.1);
+}
+
+input[type='range']::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border: none;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.5);
+}
+
+/* ── Accent-coloured track fill via CSS custom property ─ */
+.range-indigo::-webkit-slider-runnable-track { background: linear-gradient(to right, #6366f1 var(--pct, 50%), rgba(255,255,255,0.1) var(--pct, 50%)); }
+.range-pink::-webkit-slider-runnable-track   { background: linear-gradient(to right, #ec4899 var(--pct, 50%), rgba(255,255,255,0.1) var(--pct, 50%)); }
+.range-teal::-webkit-slider-runnable-track   { background: linear-gradient(to right, #14b8a6 var(--pct, 50%), rgba(255,255,255,0.1) var(--pct, 50%)); }
+
+/* ── Number inputs: hide spinners ─────────────────── */
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+input[type='number'] { -moz-appearance: textfield; }
+
+/* ── Selection ────────────────────────────────────── */
+::selection { background: rgba(99,102,241,0.3); }
